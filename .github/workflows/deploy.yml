@@ -62,7 +62,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write    # <--- 就是这里！把 read 改成 write
   pages: write
   id-token: write
 
