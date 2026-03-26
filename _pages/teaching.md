@@ -2,14 +2,31 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Course materials, schedules, and resources for classes taught.
+description: A summary of my teaching experience, course materials, and projects.
 nav: true
 nav_order: 6
-calendar: true
 ---
 
-This page displays a collection of courses with detailed schedules, materials, and resources. You can organize your courses by years, terms, or topics.
+### Current Teaching (Lingnan University)
 
-{% include calendar.liquid calendar_id='test@gmail.com' timezone='Asia/Shanghai' %}
+* **CDS705: Optimisation Methods in Practice**
+  * *Role:* Co-Lecturer (with Prof. Jean-Michel Morel)
+  * *Term:* Spring 2026
+  * *Description:* This course introduces fundamental optimization techniques and their practical applications in data science and engineering. It covers key concepts such as linear programming, convex optimization, and gradient-based methods, bridging the gap between mathematical theory and algorithmic implementation. Students will learn how to formulate complex real-world challenges mathematically and solve them using modern computational tools.
+  * **Course Materials & Projects:**
+    * [Syllabus (PDF)](#)
+    * [Lecture Slides](#)
+    * [Assignment 1: Problem Formulation](#)
 
-{% include courses.liquid %}
+<br>
+
+* **CDS554: Smart Logistics**
+  * *Role:* Lecturer
+  * *Term:* Spring 2026
+  * *Description:* This course explores the integration of advanced data analytics, machine learning, and operations research into modern supply chain and logistics management. Key topics include route optimization, inventory forecasting, intelligent warehousing, and data-driven decision making in industrial systems. Through hands-on projects, students will design and evaluate smart logistical solutions for real-world scenarios.
+  * **Course Materials & Projects:**
+    * [Syllabus (PDF)](#)
+    * [Lecture Slides](#)
+    * [Final Project: Guidelines and Grading Rubrics (PDF)](#)
+
+ 
