@@ -208,21 +208,39 @@
 {% endif %}
 <script>
   (function() {
-    // 1. 获取浏览器时区
+    // --- 1. 区域拦截逻辑 ---
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    // 2. 获取浏览器语言
     const lang = navigator.language || navigator.userLanguage;
-
-    // 只要满足：时区是上海/重庆/乌鲁木齐，或者语言是简体中文
-    const isMainland = tz.includes('Shanghai') || 
-                       tz.includes('Chongqing') || 
-                       tz.includes('Urumqi') || 
-                       lang === 'zh-CN';
+    const isMainland = tz.includes('Shanghai') || tz.includes('Chongqing') || tz.includes('Urumqi') || lang === 'zh-CN';
 
     if (isMainland) {
-      // 立即重定向到 Google 或其他页面
       window.location.replace("https://www.google.com");
+      return; // 拦截后直接退出，不再执行后续
     }
+
+    // --- 2. 禁止复制/右键/选中文本逻辑 ---
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault(); // 禁止右键菜单
+    });
+
+    document.addEventListener('keydown', function(e) {
+      // 禁止 Ctrl+C, Ctrl+U (看源码), Ctrl+S (保存网页), Ctrl+P (打印)
+      if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 80 || e.keyCode === 65)) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // 动态添加 CSS：禁止鼠标选中文本
+    const style = document.createElement('style');
+    style.innerHTML = `
+      * {
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+      }
+    `;
+    document.head.appendChild(style);
   })();
 </script>
-
