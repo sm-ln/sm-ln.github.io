@@ -30,10 +30,3 @@ Shimin Wang is currently an Assistant Professor with the Division of Industrial 
 - Industrial Data Mining
 
 Feel free to reach out to me for academic discussions or collaborations.
-
-# -----------------------------------------------------------------------------
-# Social Network Usernames
-# -----------------------------------------------------------------------------
-email: smwang@ln.edu.hk  # 你的工作邮箱，会自动生成邮件图标
-github_username: sm-ln   # 你的 GitHub 账号，会自动生成 GitHub 图标
-scholar_userid: 439H860AAAAJ  # 你的谷歌学术 ID，会自动生成博士帽图标
