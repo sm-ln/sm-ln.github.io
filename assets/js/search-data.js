@@ -46,7 +46,7 @@ ninja.data = [{
           },
         },{id: "nav-teaching",
           title: "teaching",
-          description: "Course materials, schedules, and resources for classes taught.",
+          description: "A summary of my teaching experience, course materials, and projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
