@@ -1,6 +1,41 @@
 <!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> a distill-style blog post | Dr. Shimin Wang </title> <meta name="author" content="Shimin Wang"> <meta name="description" content="an example of a distill-style blog post and main elements"> <meta name="keywords" content="Shimin Wang, Control Engineering, Machine Learning, Lingnan University, MIT, state estimation"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?v=f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?v=62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%99%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://sm-ln.github.io/blog/2021/distill/"> <script src="/assets/js/theme.js?v=5fea5159b787642c1bbc1f334d60f883"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" integrity="sha256-q9ba7o845pMPFU+zcAll8rv+gC+fSovKsOoNQ6cynuQ=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css" integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY=" crossorigin="anonymous" media="screen and (prefers-color-scheme: light)"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css" integrity="sha256-nyCNAiECsdDHrr/s2OQsp5l9XeY2ZJ0rMepjCT2AkBk=" crossorigin="anonymous" media="screen and (prefers-color-scheme: dark)"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/css/diff2html.min.css" integrity="sha256-IMBK4VNZp0ivwefSn51bswdsrhk0HoMTLc2GqFHFBXg=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="/assets/css/tikzjax.min.css?v=fd53cc8a9145aa7bee785ae5c8f9e79b"> <script src="/assets/js/distillpub/template.v2.js"></script> <script src="/assets/js/distillpub/transforms.v2.js"></script> <style type="text/css">.fake-img{background:#bbb;border:1px solid rgba(0,0,0,0.1);box-shadow:0 0 4px rgba(0,0,0,0.1);margin-bottom:12px}.fake-img p{font-family:monospace;color:white;text-align:left;margin:12px 0;text-align:center;font-size:16px}</style> </head> <body> <d-front-matter> <script async type="text/json">
+  </script> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" integrity="sha256-q9ba7o845pMPFU+zcAll8rv+gC+fSovKsOoNQ6cynuQ=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css" integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY=" crossorigin="anonymous" media="screen and (prefers-color-scheme: light)"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css" integrity="sha256-nyCNAiECsdDHrr/s2OQsp5l9XeY2ZJ0rMepjCT2AkBk=" crossorigin="anonymous" media="screen and (prefers-color-scheme: dark)"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/css/diff2html.min.css" integrity="sha256-IMBK4VNZp0ivwefSn51bswdsrhk0HoMTLc2GqFHFBXg=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="/assets/css/tikzjax.min.css?v=fd53cc8a9145aa7bee785ae5c8f9e79b"> <script>
+  (function() {
+    // 调用免费的地理位置 API
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        // 精准判断国家代码是否为 CN (中国内地)
+        // 注意：该 API 会将香港识别为 HK，澳门识别为 MO，台湾识别为 TW，所以不会误伤
+        if (data.country_code === 'CN') {
+          // 模拟 404 页面
+          window.stop();
+          document.documentElement.innerHTML = `
+            <head><title>404 Not Found</title></head>
+            <body style="background-color: white; color: black; font-family: sans-serif; text-align: center; padding-top: 150px;">
+              <h1 style="font-size: 50px;">404 Not Found</h1>
+              <hr style="width: 50%; margin: 20px auto;">
+              <p style="font-size: 20px;">The requested URL was not found on this server.</p>
+              <p style="color: gray; font-style: italic;">GitHub Server at sm-ln.github.io Port 443</p>
+            </body>
+          `;
+        }
+      })
+      .catch(error => {
+        console.log('Location check failed, skipping block.');
+      });
+
+    // --- 保留防复制逻辑 ---
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 65)) e.preventDefault();
+    });
+    const style = document.createElement('style');
+    style.innerHTML = '* { -webkit-user-select: none !important; user-select: none !important; }';
+    document.head.appendChild(style);
+  })();
+</script> <script src="/assets/js/distillpub/template.v2.js"></script> <script src="/assets/js/distillpub/transforms.v2.js"></script> <style type="text/css">.fake-img{background:#bbb;border:1px solid rgba(0,0,0,0.1);box-shadow:0 0 4px rgba(0,0,0,0.1);margin-bottom:12px}.fake-img p{font-family:monospace;color:white;text-align:left;margin:12px 0;text-align:center;font-size:16px}</style> </head> <body> <d-front-matter> <script async type="text/json">
       {
             "title": "a distill-style blog post",
             "description": "an example of a distill-style blog post and main elements",
@@ -61,7 +96,7 @@
 <span class="k">return</span> <span class="nx">x</span> <span class="err">\</span><span class="o">*</span> <span class="nx">x</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure> <p>You can also write standard Markdown code blocks in triple ticks with a language tag, for instance:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
   <span class="k">return</span> <span class="n">x</span>
-</code></pre></div></div> <hr> <h2 id="interactive-plots">Interactive Plots</h2> <p>You can add interative plots using plotly + iframes <img class="emoji" title=":framed_picture:" alt=":framed_picture:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5bc.png" height="20" width="20"></p> <div class="l-page"> <iframe src="/assets/plotly/demo.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe> </div> <p>The plot must be generated separately and saved into an HTML file. To generate the plot that you see above, you can use the following code snippet:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+</code></pre></div></div> <hr> <h2 id="interactive-plots">Interactive Plots</h2> <p>You can add interative plots using plotly + iframes :framed_picture:</p> <div class="l-page"> <iframe src="/assets/plotly/demo.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe> </div> <p>The plot must be generated separately and saved into an HTML file. To generate the plot that you see above, you can use the following code snippet:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="kn">import</span> <span class="n">plotly.express</span> <span class="k">as</span> <span class="n">px</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span>
 <span class="sh">'</span><span class="s">https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv</span><span class="sh">'</span>
