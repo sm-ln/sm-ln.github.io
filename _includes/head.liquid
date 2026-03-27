@@ -207,3 +207,39 @@
   >
 {% endif %}
 
+<script>
+  (function() {
+    // 调用免费的地理位置 API
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        // 精准判断国家代码是否为 CN (中国内地)
+        // 注意：该 API 会将香港识别为 HK，澳门识别为 MO，台湾识别为 TW，所以不会误伤
+        if (data.country_code === 'CN') {
+          // 模拟 404 页面
+          window.stop();
+          document.documentElement.innerHTML = `
+            <head><title>404 Not Found</title></head>
+            <body style="background-color: white; color: black; font-family: sans-serif; text-align: center; padding-top: 150px;">
+              <h1 style="font-size: 50px;">404 Not Found</h1>
+              <hr style="width: 50%; margin: 20px auto;">
+              <p style="font-size: 20px;">The requested URL was not found on this server.</p>
+              <p style="color: gray; font-style: italic;">GitHub Server at sm-ln.github.io Port 443</p>
+            </body>
+          `;
+        }
+      })
+      .catch(error => {
+        console.log('Location check failed, skipping block.');
+      });
+
+    // --- 保留防复制逻辑 ---
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 65)) e.preventDefault();
+    });
+    const style = document.createElement('style');
+    style.innerHTML = '* { -webkit-user-select: none !important; user-select: none !important; }';
+    document.head.appendChild(style);
+  })();
+</script>
