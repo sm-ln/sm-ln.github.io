@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Assistant Professor at Lingnan University | Adjunct with MIT
+subtitle: Assistant Professor at Lingnan University, Hong Kong | Adjunct with MIT
 
 profile:
   align: right
@@ -19,7 +19,7 @@ selected_papers: false
 social: true 
 ---
 
-Shimin Wang is currently an Assistant Professor with the Division of Industrial Data Science in the School of Data Science at Lingnan University, and an Adjunct with MIT. His research interests are Embodied AI, Machine Learning, Battery Management, Data Processing, Data Science, Industrial Data mining and their applications in Industrial manufacturing system.
+Shimin Wang is currently an Assistant Professor with the School of Data Science at Lingnan University, Hong Kong and djunct with MIT. His research interests are Embodied AI, Machine Learning, Battery Management, Data Processing, Data Science, Industrial Data mining and their applications in Industrial manufacturing system.
 
 **Research Interests:**
 - Embodied AI
