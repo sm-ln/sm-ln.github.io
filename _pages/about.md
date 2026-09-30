@@ -10,7 +10,7 @@ profile:
   image_circular: false 
   more_info: >
     <p>School of Data Science</p>
-    <p>Lingnan University</p>
+    <p>Lingnan University, HongKong</p>
 
 news: false 
 latest_posts: false
